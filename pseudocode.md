@@ -12,7 +12,29 @@
 * OR if no dirt, rub hands together under water until soap is gone
 * Dry hands on towel
 
-## PROGRAM washyourhands
+### User Story
+As a patron, I want to wash my hands so they will be clean.
+
+### Objects / Data Structures
+* Sink
+* Soap
+ * Dispenser (If > 0)
+* Hands
+ * If = 2
+* Water
+* Towel
+* Dirt
+ * If true
+* If any not present
+ * String "Function cannot be completed"
+
+## START
+
+### PROGRAM washyourhands
+
+INIT()
+
+
 
 
 
