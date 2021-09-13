@@ -1,8 +1,7 @@
-### Deconstruct and Identify
+#### Deconstruct and Identify
 
 * Does patron have running water?
 * Does patron have soap?
-* Does patron have 2 hands?
 * Does patron have towel?
 * Is there dirt on hands?
 * Turn on water
@@ -12,30 +11,45 @@
 * OR if no dirt, rub hands together under water until soap is gone
 * Dry hands on towel
 
-### User Story
+#### User Story
 As a patron, I want to wash my hands so they will be clean.
 
-### Objects / Data Structures
+#### Objects / Data Structures
 * Sink
 * Soap
- * Dispenser (If > 0)
-* Hands
- * If = 2
+  * Dispenser (If > 0)
+* Hands = 2
 * Water
 * Towel
 * Dirt
- * If true
+  * If true
 * If any not present
- * String "Function cannot be completed"
+  * String "Function cannot be completed"
 
-## START
+### START
 
-### PROGRAM washyourhands
+#### PROGRAM washyourhands
 
 INIT()
 
+IF (water = true) {
+    Patron.turnOn();
+}
 
+IF (soap > 0) {
+    Patron.dispense();
+}
 
+Patron.rub();
+IF (dirt = true) {
+    WHILE (dirt = true) {
+        Patron.rub();
+        setInterval((dirt=false), 30000);
+    }
+ELSE
+    Patron.rub();
+}
 
+Patron.dry();
 
-## END
+### END
