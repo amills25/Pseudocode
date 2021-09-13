@@ -1,0 +1,5 @@
+PROGRAM washyourhands
+
+
+
+END
