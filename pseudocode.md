@@ -24,7 +24,7 @@ As a patron, I want to wash my hands so they will be clean.
 * Dirt
   * If true
 * If any not present
-  * String "Function cannot be completed"
+  * String "Operation cannot be completed"
 
 ### START
 
@@ -33,23 +33,66 @@ As a patron, I want to wash my hands so they will be clean.
 INIT()
 
 IF (water = true) {
-    Patron.turnOn();
+    Patron.turnOnSink();
+ELSE
+    alert("Operation cannot be completed.");
 }
 
 IF (soap > 0) {
-    Patron.dispense();
+    Patron.dispenseSoap();
+ELSE
+    alert("Operation cannot be completed.");
 }
 
-Patron.rub();
-IF (dirt = true) {
-    WHILE (dirt = true) {
-        Patron.rub();
+Patron.scrub();
+IF (hasDirt = true) {
+    WHILE (hasDirt = true) {
+        Patron.rubHands();
         setInterval((dirt=false), 30000);
     }
 ELSE
-    Patron.rub();
+    Patron.rubHands();
 }
 
-Patron.dry();
+Patron.dryHands();
+
+#### End program
+
+#### Define Objects, Functions
+* Patron
+  * turnOnSink
+  * dispenseSoap
+  * rubHands
+  * dryHands
+
+* INIT function
+  * CREATE hand 1, hand 2
+  * CREATE soap
+  * CREATE patron
+  * CREATE hasDirt
+  * CREATE towel
+  * CREATE water
+  
+* turnOnSink
+  * INIT
+  * Add water to hands
+
+* dispenseSoap
+  * INIT
+  * soap > 0
+  * Add soap to hands
+
+* scrub
+  * INIT
+  * IF hasDirt = true
+  * WHILE rubHands(), then setInterval(30 seconds)
+  * ELSE hasDirt = false, then rubHands()
+
+* rubHands
+  * INIT
+
+* dryHands 
+  * INIT
+  * Subtract water from hands
 
 ### END
