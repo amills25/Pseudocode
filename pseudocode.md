@@ -38,29 +38,34 @@ As a patron, I want to wash my hands so they will be clean.
 
 INIT()
 
+```javascript
 IF (water = true) {
-    patron.turnOnSink();
-ELSE
+    patron.turnOnSink();}
+ELSE {
     alert("Operation cannot be completed.");
 }
+```
 
+```javascript
 IF (soap > 0) {
-    patron.dispenseSoap();
-ELSE
+    patron.dispenseSoap();}
+ELSE {
     alert("Operation cannot be completed.");
 }
+```
 
 Patron.scrub();
-
-[//]: # IF (hasDirt = true) {
-[//]: #   WHILE (hasDirt = true) {
-[//]: #       patron.rubHands();
-[//]: #       setInterval((hasDirt = false), 30000);
-[//]: #   }
-[//]: # ELSE
-[//]: #   patron.rubHands();
-[//]: # }
-
+```javascript
+IF (hasDirt = true) {
+   WHILE (hasDirt = true) {
+       patron.rubHands();
+       setInterval((hasDirt = false), 30000);}
+   }
+}   
+ELSE {
+   patron.rubHands();
+}
+```
 patron.dryHands();
 
 #### End program
