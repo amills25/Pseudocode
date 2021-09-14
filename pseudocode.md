@@ -54,7 +54,8 @@ ELSE {
 }
 ```
 
-Patron.scrub();
+Patron.scrub(); 
+>(Would contain something like the below code)
 ```javascript
 IF (hasDirt = true) {
    WHILE (hasDirt = true) {
