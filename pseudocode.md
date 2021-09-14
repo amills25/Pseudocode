@@ -11,19 +11,25 @@
 * OR if no dirt, rub hands together under water until soap is gone
 * Dry hands on towel
 
-#### User Story
+##### Functionality
 As a patron, I want to wash my hands so they will be clean.
 
-#### Objects / Data Structures
-* Sink
+1. Patron turns on water.
+2. Is there soap?
+3. Patron puts soap on hands.
+4. Is there dirt on hands?
+5. Patron scrubs dirt and/or soap off hands under water until gone.
+6. Patron dries hands.
+
+##### Objects / Data Structures
+* Sink (boolean)
 * Soap
   * Dispenser (If > 0)
 * Hands = 2
-* Water
-* Towel
-* Dirt
-  * If true
-* If any not present
+* Water (boolean)
+* Towel = 1
+* Dirt (boolean)
+* If any of the above are not present
   * String "Operation cannot be completed"
 
 ### START
@@ -33,37 +39,39 @@ As a patron, I want to wash my hands so they will be clean.
 INIT()
 
 IF (water = true) {
-    Patron.turnOnSink();
+    patron.turnOnSink();
 ELSE
     alert("Operation cannot be completed.");
 }
 
 IF (soap > 0) {
-    Patron.dispenseSoap();
+    patron.dispenseSoap();
 ELSE
     alert("Operation cannot be completed.");
 }
 
 Patron.scrub();
-IF (hasDirt = true) {
-    WHILE (hasDirt = true) {
-        Patron.rubHands();
-        setInterval((dirt=false), 30000);
-    }
-ELSE
-    Patron.rubHands();
-}
 
-Patron.dryHands();
+[//]: # IF (hasDirt = true) {
+[//]: #   WHILE (hasDirt = true) {
+[//]: #       patron.rubHands();
+[//]: #       setInterval((hasDirt = false), 30000);
+[//]: #   }
+[//]: # ELSE
+[//]: #   patron.rubHands();
+[//]: # }
+
+patron.dryHands();
 
 #### End program
 
 #### Define Objects, Functions
-* Patron
+* patron
   * turnOnSink
   * dispenseSoap
   * rubHands
   * dryHands
+  * hasDirt
 
 * INIT function
   * CREATE hand 1, hand 2
